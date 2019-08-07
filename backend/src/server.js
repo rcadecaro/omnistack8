@@ -1,5 +1,5 @@
 const express = require('express');
-
+const cors = require('cors');
 const routes = require('./routes');
 
 const server = express();
@@ -9,6 +9,7 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@omnistack-jiv32.mongodb.net/
 {
     useNewUrlParser: true
 });
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 // killall -9 node
